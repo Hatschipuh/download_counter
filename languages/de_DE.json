@@ -1,0 +1,12 @@
+{
+ "plugin-data":
+ {
+  "name": "Download Counter V1.0 03/18",
+  "description": "Zählt die Downloads (nur .ZIP) und bietet den Log als CSV Datei an"
+ } ,
+	"zaehler_ein_ausschalten": "Download Zähler Ein- / Ausschalten",
+	"zaehler_nullen": "Zähler Nullen / Bisherige Daten löschen",
+	"installation": "WICHTIG! Dieses Plugin benötigt die Rechte 777!",
+	"zaehler_hinweis": "Wird der Zähler ausgeschaltet, bleiben die bisherigen Log's gespeichert!",
+	"nullen_hinweis": "Achtung! Nach dem Nullen bitte wieder auf 'Off' stellen, sonst wird der Log immer wieder gelöscht!"
+}

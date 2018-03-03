@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule (^.*\.zip$) http://hertste.de/pc/bludit-pro/bl-content/uploads/downloadcounter.php?$1 [R=301,L]

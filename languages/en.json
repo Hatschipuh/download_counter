@@ -1,0 +1,12 @@
+{
+ "plugin-data":
+ {
+  "name": "Download Counter V1.0 03/18",
+  "description": "Count Downloads (only .ZIP). You can see the Log in a CSV File."
+ } ,
+	"zaehler_ein_ausschalten": "Download Counter On/Off",
+	"zaehler_nullen": "Clear Counter",
+	"installation": "Please give the Plugin CHMOD 777!",
+	"zaehler_hinweis": "Will you Counter off, then the logs exists!",
+	"nullen_hinweis": "When you 'On', make it 'Off'. If you not after 'On' to 'Off', then alway Clear the Counter File."
+}
