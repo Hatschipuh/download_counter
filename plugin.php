@@ -8,9 +8,9 @@ Autor:      Hertste, Germany, stefan.programmiert@web.de
 Website:    Http://www.pc.hertste.de
 Copyright:  2018 Stefan H.
 
-Für Bludit Version 2.X
+FÃ¼r Bludit Version 2.X
 
-Fragen, Wünsche, Anregungen sind erwünscht
+Fragen, WÃ¼nsche, Anregungen sind erwÃ¼nscht
 */
 
 
@@ -23,14 +23,7 @@ class download2 extends Plugin {
 		// Fields and default values for the database of this plugin
 		$this->dbFields = array(
 		    'nullen'=>False,
-		    'an_aus'=>False,
-		    'hochscrollenAnAus'=>False,
-		    'eigeneFusszeileAnAus'=>False,
-		    'zaehler_ein_ausschalten'=>'',
-			'bezeichnung2'=>'',
-			'bezeichnung_logo2'=>'',
-            'bezeichnung_hochscrollen_farbe'=>'',
-            'eigene_fusszeile'=>''
+		    'an_aus'=>False
 		);
 	}
 
@@ -44,31 +37,31 @@ class download2 extends Plugin {
 	{
 		global $Language;
 		$html = $Language->get('installation').'<br /><br />';
- 
- 
-        // === Zählener an / aus
+
+
+        // === ZÃ¤hlener an / aus
         if ($this->getValue('an_aus') == "1") { //eingeschaltet
             if (!copy(PATH_PLUGINS.'download/downloadcounter.php', PATH_UPLOADS.'downloadcounter.php')) { $html .= "Installation schlug fehl."; }
             // .htaccess muss neu geschrieben werden
-  $fp=fopen(PATH_UPLOADS.'.htaccess',"w+");
-  fwrite($fp,"RewriteEngine On\r\nRewriteRule (^.*\.zip$) ".DOMAIN_UPLOADS."downloadcounter.php?$1 [R=301,L]  ");
+  $fp=@fopen(PATH_UPLOADS.'.htaccess',"w+");
+  @fwrite($fp,"RewriteEngine On\r\nRewriteRule (^.*\.zip$) ".DOMAIN_UPLOADS."downloadcounter.php?$1 [R=301,L]  ");
   fclose($fp);
-            
+
             //if (!copy(PATH_PLUGINS."download/htaccess/.htaccess", PATH_UPLOADS.'.htaccess')) { $html .= "Installation schlug fehl."; }
         } else {  //ausgeschaltet
-            unlink(PATH_UPLOADS.'downloadcounter.php');
-            unlink(PATH_UPLOADS.'.htaccess');
-        } 
-        
-if ($this->getValue('nullen') == "1") { // Zählener nullen        
-    unlink(PATH_UPLOADS."download_counter/download_counter.csv");
-    rmdir(PATH_UPLOADS."download_counter");
+            @unlink(PATH_UPLOADS.'downloadcounter.php');
+            @unlink(PATH_UPLOADS.'.htaccess');
+        }
+
+if ($this->getValue('nullen') == "1") { // ZÃ¤hlener nullen
+    @unlink(PATH_UPLOADS."download_counter/download_counter.csv");
+    @rmdir(PATH_UPLOADS."download_counter");
 }
 
         $html .= '<a href="'.DOMAIN_UPLOADS.'download_counter/download_counter.csv">Download Counter Statistik (CSV)</a><br />';
-                    
-                   
-        // === Zähler Ein- Ausschalten
+
+
+        // === ZÃ¤hler Ein- Ausschalten
 		$html .= '<br /><div>';
 		$html .= '<label>'.$Language->get('zaehler_ein_ausschalten').'</label>';
 		$html .= ''.$Language->get('zaehler_hinweis').'<br />';
@@ -77,8 +70,8 @@ if ($this->getValue('nullen') == "1") { // Zählener nullen
 		$html .= '<option value="false" '.($this->getValue('an_aus')===false?'selected':'').'>Off</option>';
 		$html .= '</select> ';
 		$html .= '</div><br />';
-		
-        // === Zähler Nullen
+
+        // === ZÃ¤hler Nullen
 		$html .= '<div>';
 		$html .= '<label>'.$Language->get('zaehler_nullen').'</label>';
 		$html .= ''.$Language->get('nullen_hinweis').'<br />';
@@ -86,17 +79,17 @@ if ($this->getValue('nullen') == "1") { // Zählener nullen
 		$html .= '<option value="true" '.($this->getValue('nullen')===true?'selected':'').'>On</option>';
 		$html .= '<option value="false" '.($this->getValue('nullen')===false?'selected':'').'>Off</option>';
 		$html .= '</select> ';
-		$html .= '</div>';		
-		
+		$html .= '</div>';
+
 
         //echo stripslashes(DOMAIN_UPLOADS.'downloadcounter.php<<----');
   $strURL = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
-	  
+
 
 		return $html;
 	}
 
 
-
+   }
 
 ?>
