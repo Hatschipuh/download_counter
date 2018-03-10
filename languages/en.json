@@ -8,5 +8,6 @@
 	"zaehler_nullen": "Clear Counter",
 	"installation": "Please give the Plugin CHMOD 777!",
 	"zaehler_hinweis": "Will you Counter off, then the logs exists!",
-	"nullen_hinweis": "When you 'On', make it 'Off'. If you not after 'On' to 'Off', then alway Clear the Counter File."
+	"nullen_hinweis": "When you 'On', make it 'Off'. If you not after 'On' to 'Off', then alway Clear the Counter File.",
+	"kein_download": "No Downloads!"
 }
