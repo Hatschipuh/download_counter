@@ -59,7 +59,7 @@ if ($this->getValue('nullen') == "1") { // Zählener nullen
     @rmdir(PATH_UPLOADS."download_counter");
 }
 
-        if (file_exists(DOMAIN_UPLOADS."download_counter/download_counter.csv")) {
+        if (file_exists(PATH_UPLOADS."download_counter/download_counter.csv")) {
         $html .= '<a href="'.DOMAIN_UPLOADS.'download_counter/download_counter.csv">Download Counter Statistik (CSV)</a><br />';
             } else {
                 $html .= $Language->get('kein_download').'<br>';
